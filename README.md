@@ -1,4 +1,4 @@
-Structured Text Flow work Demo
+Structured Text Flow Work Demo
 ====
 结构化文本实现WorkFlow也就是流式编程，与C#链式编程很类似<br>
 Demo主要使用以下三种方式：<br>
