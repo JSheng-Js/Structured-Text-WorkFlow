@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <Itf Name="I_StringBuilder" Id="{2fd0ddb0-5ffd-403c-92a5-7dcdf27733e3}">
+    <Declaration><![CDATA[INTERFACE I_StringBuilder EXTENDS __SYSTEM.IQueryInterface]]></Declaration>
+    <Method Name="Append" Id="{f510b285-34c4-4542-a396-e0a2e25db2d1}">
+      <Declaration><![CDATA[METHOD Append : I_StringBuilder
+VAR_INPUT
+	sText : STRING;
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="Clear" Id="{85c7c393-6c1f-4aa1-a068-6ced829f413a}">
+      <Declaration><![CDATA[METHOD Clear : I_StringBuilder
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+    <Method Name="ToString" Id="{266dde48-8af4-4476-99b0-29a8ee80b4ba}">
+      <Declaration><![CDATA[METHOD ToString : STRING
+VAR_INPUT
+END_VAR
+]]></Declaration>
+    </Method>
+  </Itf>
+</TcPlcObject>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{f312f0fa-099f-4c2b-984a-6c47d5371a94}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	// print out 'Hello world'
+	fbStringBuilder : FB_StringBuilder;
+	sResult : STRING;
+	bTest : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bTest THEN
+	sResult := fbStringBuilder.Clear()
+								.Append('H')
+								.Append('e')
+								.Append('l')
+								.Append('l')
+								.Append('o')
+								.Append(' ')
+								.Append('W')
+								.Append('o')
+								.Append('r')
+								.Append('l')
+								.Append('d')
+								.ToString();
+	bTest := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="12" Count="12" />
+      <LineId Id="10" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

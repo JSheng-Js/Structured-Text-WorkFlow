@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="FB_StringBuilder" Id="{9b7d1f4b-176f-41d4-8627-3b0bc05f09de}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_StringBuilder
+VAR
+	sContent : STRING; // Store temporary strings;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <Method Name="Append" Id="{bbe18d8f-884b-4ab2-a1d1-84173cab1b17}">
+      <Declaration><![CDATA[METHOD Append : POINTER TO FB_StringBuilder
+VAR_INPUT
+	sText : STRING;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[sContent := CONCAT(STR1 := sContent, STR2 := sText);
+Append := THIS;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="Clear" Id="{a2db7a52-3431-4f44-a4f6-d74064bb23ba}">
+      <Declaration><![CDATA[METHOD Clear : POINTER TO FB_StringBuilder
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[sContent := '';
+Clear := THIS;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="ToString" Id="{6bddf2a5-309c-4a77-8635-15b0db2737b5}">
+      <Declaration><![CDATA[METHOD ToString : STRING
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[ToString := sContent; // return internal content]]></ST>
+      </Implementation>
+    </Method>
+    <LineIds Name="FB_StringBuilder">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_StringBuilder.Append">
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_StringBuilder.Clear">
+      <LineId Id="5" Count="1" />
+    </LineIds>
+    <LineIds Name="FB_StringBuilder.ToString">
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{08544fae-b1ad-4dfc-82b7-0ab7f6e9ce50}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	// print out 'Hello world'
+	fbStringBuilder : FB_StringBuilder;
+	iStringBuilder	: I_StringBuilder := fbStringBuilder;
+	sResult1 : STRING;
+	sResult2 : STRING;
+	bTest : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF bTest THEN
+	// Function Block Instance
+	sResult1 := fbStringBuilder.Clear()
+							.Append('H')
+							.Append('e')
+							.Append('l')
+							.Append('l')
+							.Append('o')
+							.Append(' ')
+							.Append('W')
+							.Append('o')
+							.Append('r')
+							.Append('l')
+							.Append('d')
+							.ToString();
+	// Interface 
+	sResult2 := iStringBuilder.Clear()
+							.Append('H')
+							.Append('e')
+							.Append('l')
+							.Append('l')
+							.Append('o')
+							.Append(' ')
+							.Append('W')
+							.Append('o')
+							.Append('r')
+							.Append('l')
+							.Append('d')
+							.ToString();
+	bTest := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="10" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="11" Count="12" />
+      <LineId Id="41" Count="0" />
+      <LineId Id="27" Count="11" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
